@@ -114,6 +114,11 @@ public class PanelSales extends javax.swing.JFrame {
         jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setIcon(new FlatSVGIcon("bottonsAction/deposit.svg"));
         jButton7.setText("Ingresar Gasto");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -365,9 +370,25 @@ public class PanelSales extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        visibleUser();
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        visibleGastos();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void visibleUser(){
+        Usuarios us = new Usuarios();
+        us.setVisible(true);
+        us.setLocationRelativeTo(null);
+                
+     }
+    private void visibleGastos(){
+        Gastos gp = new Gastos();
+        gp.setVisible(true);
+        gp.setLocationRelativeTo(null);
+    }
+    
     private void scaleImage(JLabel label, String root) {
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
